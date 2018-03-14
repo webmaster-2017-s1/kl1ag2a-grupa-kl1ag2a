@@ -7,42 +7,61 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Umieść favicon.ico w głównym katalogu -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/narrow-jumbotron.css">
+        <style>
+            body {
+                background: url("https://static1.squarespace.com/static/560ef7a7e4b0200484b24b85/t/590807e73a0411c14a02e3d5/1493698572187/bill-williams-1806.jpg?format=1500w") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-    <!--[if lte IE 9]>
-    <p class="browserupgrade">
-        Używasz <strong>przestarzałej</strong> przeglądarki.
-        Zalecamy <a href="https://browsehappy.com/">aktualizację przeglądarki</a>
-        w celu polepszenia obsługi najnowszych standardów i podniesienia poziomu bezpieczeństwa.</p>
-    <![endif]-->
+      </head>
 
-    <!-- Tutaj dodajesz swój kod -->
-    <h1>Kółko i krzyżyk</h1>
-    <div>
-      <ul class="menu">
-        <li><a href="index.html">Strona główna</a></li>
-        <li><a href="app_jq.html">Wersja jQuery</a></li>
-        <li><a href="app_p5.html">Wersja p5js</a></li>
-      </ul>
-    </div>
+      <body>
+        <div class="container">
+          <header class="header clearfix">
+            <nav>
+              <ul class="nav nav-pills float-right">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html">Strona główna<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="app_jq.html">Wersja jQuery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="app_p5.html">Wersja p5js</a>
+                </li>
+              </ul>
+            </nav>
+            <h3 class="text-white">Projekt kółko i krzyżyk</h3>
+          </header>
+
+          <main role="main">
+
+            <div class="jumbotron">
+              <h1 class="display-3"></h1>
+            </div>
+
+
+          </main>
 
 
 
-    <!-- skrypt umożliwiający sprawdzanie możliwośći przeglądarki -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <!--biblioteka jQuery-->
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
-    <!--jeżeli nie pobrano jQuery z sieci, spróbuj załadować ją z podfolderu js -->
+
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
-    <!-- ewentualny kod JS ogólny -->
     <script src="js/main.js"></script>
-    <!--kod aplikacji w jQuery-->
     <script src="js/app_jq.js"></script>
+
+    <footer class="footer">
+      <p class="text-white">&copy; Aleksandra, Paulina, Agnieszka 2018</p>
+    </footer>
 
   </body>
 </html>
