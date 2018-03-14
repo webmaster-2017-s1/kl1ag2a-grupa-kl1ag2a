@@ -1,4 +1,4 @@
-//
+
 // Document Ready, Let's Play
 //
 $(function() {
@@ -81,3 +81,57 @@ var Game = function(element, template){
       if(self.over) return;
       $(this).removeClass('hover-0 hover-1');
     })
+
+    // reset the td.X|O elements when css animations are done
+    $(this.element).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 'td.X', function(){
+      $(this).attr('class', 'X')
+    });
+
+    $(this.element).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 'td.O', function(){
+      $(this).attr('class', 'O')
+    });
+
+  }
+
+  this.start = function(){
+    this.hideMenu();
+    this.init();
+    // console.log('Starting Game');
+    $('#game tr td').attr('class', '');
+    $('#status').removeClass('show');
+    // create two players
+    this.Player.push( new Player(0) );
+    this.Player.push( new Player(1) );
+    this.Board = new Board();
+    this.Board.update();
+    // set this.startTime
+    this.startTime = Date.now();
+
+    // this.timer();
+  };
+
+  this.showMenu = function(){
+    $('#menu').attr('class', '')
+  }
+
+  this.hideMenu = function(){
+    $('#menu').attr('class', 'hidden')
+  }
+
+  this.restart = function(){
+    clearInterval( this.timerHandle );
+    this.start();
+  }
+
+
+  this.timer = function(){
+    var self = this;
+    var then = self.startTime;
+    var format = function(now, then){
+      return Date.create(then).relative();
+    };
+    this.timerHandle = setInterval(function(){
+      var now = Date.now();
+      $('#time').text( format(now, then) );
+    }, 500);
+  };
