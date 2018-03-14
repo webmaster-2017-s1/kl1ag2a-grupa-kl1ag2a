@@ -1,0 +1,43 @@
+img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.container {
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border-color: deeppink;
+    padding: 5px;
+    }
+    body { background-image: url("http://i.pinger.pl/pgr481/ab5f822f001633f4533f15a2/4b310b5f00082a3b520a9737.png");}
+    p {
+    font: bold normal 17pt/1.5em arial, tahoma, sans-serif;
+    text-align: justify;
+    }
+
+    h1{
+        color: white;
+        text-shadow: 3px 2px deeppink;
+    }
+
+    a{
+        color: deeppink;
+        text-decoration: none;
+    }
