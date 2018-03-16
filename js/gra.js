@@ -1,6 +1,4 @@
 
-// Document Ready, Let's Play
-//
 $(function() {
 
   new Game('#game-container', '#game-template')
@@ -18,10 +16,10 @@ var Game = function(element, template){
     this.moves = 0;
     this._winPiece = [];
     this.startTime = Date.now();
-    this.endTime = Date.now(); // reset this latter
+    this.endTime = Date.now(); 
     this.Player = [];
     this.Board = null;
-    this.activePlayer = 0; // current active player (index of this.players)
+    this.activePlayer = 0; 
     this.updateMovesCount();
     this.maxThemes = 4;
 
@@ -30,7 +28,7 @@ var Game = function(element, template){
       this.element.append(this.template)
       this.bindEvents()
 
-      // store theme in cookie
+      
       var theme = readCookie('game-theme') || 1
       theme = parseInt(theme)
       this.setTheme( theme )
@@ -65,7 +63,7 @@ var Game = function(element, template){
       }, 750);
     });
 
-    // bind input actions
+   
     $('#game tr td', this.element).click(function(el, a, b){
       if(self.over) return;
       var col = $(this).index();
@@ -82,7 +80,7 @@ var Game = function(element, template){
       $(this).removeClass('hover-0 hover-1');
     })
 
-    // reset the td.X|O elements when css animations are done
+    
     $(this.element).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 'td.X', function(){
       $(this).attr('class', 'X')
     });
@@ -96,18 +94,17 @@ var Game = function(element, template){
   this.start = function(){
     this.hideMenu();
     this.init();
-    // console.log('Starting Game');
+   
     $('#game tr td').attr('class', '');
     $('#status').removeClass('show');
-    // create two players
+  
     this.Player.push( new Player(0) );
     this.Player.push( new Player(1) );
     this.Board = new Board();
     this.Board.update();
-    // set this.startTime
+    
     this.startTime = Date.now();
 
-    // this.timer();
   };
 
   this.showMenu = function(){
