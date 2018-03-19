@@ -1,109 +1,138 @@
 <!doctype html>
-<html class="no-js" lang="pl">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kółko i krzyżyk</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+	<meta charset="UFT-8">
+	<title>Tic Tac Toe</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="skrypt.js"></script>
+  <link rel="stylesheet" href="js/skrypt.js">
+
+	<style>
+
+		html {
+			font-family: 'Raleway', sans-serif;
+			font-weight: 400;
+			font-size: 12px;
+		}
+
+		.container {
+			max-width: 400px;
+			margin: 2em auto;
+			text-align: center;
+			line-height: 1.5;
+		}
+
+		h1 {
+			margin: 1em auto;
+		}
+
+		a {
+			text-decoration: none;
+			color: pink;
+			font-weight: 700;
+		}
+
+		span.red {
+			color: red;
+			font-weight: 700;
+		}
+
+		span.blue {
+			color: blue;
+			font-weight: 700;
+		}
+
+		span.pink {
+			color: pink;
+		}
+
+		.button {
+			width: 90px;
+			height: 15px;
+			border-radius: 5px;
+			padding: 5px;
+			margin: 0 auto;
+
+			cursor: pointer;
+			text-align: center;
+
+			background-color: pink;
+			font-size: 13px;
+			color: #fff;
+		}
+
+		.tic-tac-toe {
+			width: 315px;
+			height: auto;
+			margin: 0 auto;
+
+		}
+
+		.tile {
+			height: 100px;
+			width: 100px;
+			display: inline-block;
+			cursor: pointer;
+
+			position: relative;
+			vertical-align: top;
+
+			padding: 15px;
+			margin-bottom: 5px;
+			box-sizing: border-box;
+
+			color: #fff;
+			font-size: 60px;
+			text-align: center;
+		}
+
+		.free {
+			background-color: #999;
+		}
 
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/narrow-jumbotron.css">
-        <script type="text/javascript" src="gra.js"></script>
-        
+		.O-play {
+			background-color: blue;
+		}
 
-        <style>
-            body {
-                background: url("https://static1.squarespace.com/static/560ef7a7e4b0200484b24b85/t/590807e73a0411c14a02e3d5/1493698572187/bill-williams-1806.jpg?format=1500w") no-repeat center center fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-        </style>
-
-      </head>
-
-      <body>
-        <div class="container">
-          <header class="header clearfix">
-            <nav>
-              <ul class="nav nav-pills float-right">
-                <li class="nav-item">
-                  <a class="nav-link active" href="index.html">Strona główna<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="app_jq.html">Wersja jQuery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="app_p5.html">Wersja p5js</a>
-                </li>
-              </ul>
-            </nav>
-            <h3 class="text-white">Projekt kółko i krzyżyk</h3>
-          </header>
-
-          <main role="main">
-
-            <div class="jumbotron">
-              <h1 class="display-3">
-                  <div id="game-container"></div>
-
-                  <script type="text/x-template" id="game-template">
-                  <div id="menu-container">
-                    <a href="#" title="Change Theme" id="theme" class="button">Motyw: <span>1</span></a>
-
-                    <ul id="menu" class="hidden">
-                      <li id="time">Ruchy:</li>
-                      <li id="status">Gracz X wygrywa!</li>
-                      <li><a href="#restart" id="restart" class="button">RESTART</a></li>
-                    </ul>
-                  </div>
-
-                  <table id="game" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </table>
-                  </script>
-</h1>
-
-            </div>
+		.X-play {
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
 
 
-          </main>
+	<div class="container">
 
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+		<h1>Kółko krzyżyk</h1>
 
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
+		<p>Prosta gra tic tac toe<br/>
+			Ty grasz jako <span class="red">X</span> a komputer gra jako <span class="blue">O</span><br/>
+			Zacznij wybierając pole gry!</p>
 
-    <script src="js/vendor/p5.min.js"></script>
-    <script src="js/vendor/p5.dom.min.js"></script>
-    <script src="js/vendor/p5.sound.min.js"></script>
 
-    <script src="js/main.js"></script>
+		<div class="button" id="reset-button">Zrestartuj</div>
 
-    <script src="js/app_p5.js"></script>
+	</div>
 
-    <footer class="footer">
-      <p class="text-white">&copy; Aleksandra, Paulina, Agnieszka 2018</p>
-    </footer>
+	<div class="tic-tac-toe">
+		<div id="square1" class="tile free"></div>
+		<div id="square2" class="tile free"></div>
+		<div id="square3" class="tile free"></div>
+		<div id="square4" class="tile free"></div>
+		<div id="square5" class="tile free"></div>
+		<div id="square6" class="tile free"></div>
+		<div id="square7" class="tile free"></div>
+		<div id="square8" class="tile free"></div>
+		<div id="square9" class="tile free"></div>
+	</div>
 
+    <footer class="container">Made by <span class="pink">&#9829</span> by <a href="http://www.ireaderinokun.com">Agnieszka, Paulina, Aleksnadra</a><footer>
 
   </body>
 </html>
