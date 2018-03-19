@@ -1,63 +1,26 @@
-<!doctype html>
-<html class="no-js" lang="pl">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kółko i krzyżyk</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kółko krzyżyk</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/narrow-jumbotron.css">
-        <style>
-            body {
-                background: url("https://static1.squarespace.com/static/560ef7a7e4b0200484b24b85/t/590807e73a0411c14a02e3d5/1493698572187/bill-williams-1806.jpg?format=1500w") no-repeat center center fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-        </style>
-
-      </head>
-
-      <body>
-        <div class="container">
-          <header class="header clearfix">
-            <nav>
-              <ul class="nav nav-pills float-right">
-                <li class="nav-item">
-                  <a class="nav-link active" href="index.html">Strona główna<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="app_jq.html">Wersja jQuery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="app_p5.html">Wersja p5js</a>
-                </li>
-              </ul>
-            </nav>
-            <h3 class="text-white">Projekt kółko i krzyżyk</h3>
-          </header>
-
-          <main role="main">
-
-            <div class="jumbotron">
-              <h1 class="display-3"></h1>
-            </div>
-
-
-          </main>
+  <body>
+    <h1>Kółko krzyżyk</h1>
+    <div class="ttt">
+      <div class="board"></div>
+      <div class="win-message">Wygrałeś!</div>
+      <div class="draw-message">Porażka!</div>
+    </div>
 
 
 
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/app_jq.js"></script>
+    <script>
+      $(function () {
+        new TTT.View(new TTT.Game(), $("div.ttt"));;
+      });
+    </script>
 
     <footer class="footer">
       <p class="text-white">&copy; Aleksandra, Paulina, Agnieszka 2018</p>
