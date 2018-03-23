@@ -1,15 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
 # humanstxt.org/
 # The humans responsible & technology colophon
 
 # TEAM
-
-    <name> -- <role> -- <email>
+	1. Talaga Agnieszka — wersja js — agnieszkata1@o2.pl
+	2. Rewera Aleksandra — wersja jq — aleksandrarewera@gmail.com
+	3. Noga Paulina — edycja i poprawa plików — paulinanoga55@gmail.com 
 
 # THANKS
 
-    <name>
+	Aleksandra, Agnieszka, Paulina
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    jQuery, Modernizr, Normalize.css, p5js
+	CSS3, HTML5
+	jQuery, Modernizr, Normalize.css, p5js
