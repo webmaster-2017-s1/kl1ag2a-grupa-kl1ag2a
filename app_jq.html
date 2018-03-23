@@ -1,32 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Kółko krzyżyk</title>
-    <link rel="stylesheet" type="text/css" href="../css/style2.css">
-  </head>
+<html lang="pl" >
 
-  <body>
-    <h1>Kółko krzyżyk</h1>
-    <div class="ttt">
-      <div class="board"></div>
-      <div class="win-message">Wygrałeś!</div>
-      <div class="draw-message">Porażka!</div>
+<head>
+  <meta charset="UTF-8">
+  <title>Kółko i krzyżyk</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style_do_jq.css">
+
+  
+</head>
+
+<body>
+
+  <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kółko i krzyżyk</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Oswald" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="info">
+    <span id="info-text">Runda:</span>
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front">
+          <img src="https://s18.postimg.org/s90kaibmh/cross.png" style="height: 100%; width:100%">
+        </div>
+        <div class="back">
+          <img src="https://s18.postimg.org/e2ktfag6x/circle.png" style="height: 100%; width:100%">
+        </div>
+      </div>
     </div>
+  </div>
 
-<script src="../js/jQuery-działanie.js"></script>
-    <script src="../js/widok.js"></script>
+  <div id="board">
+    <img id="lines" src="https://s18.postimg.org/avq9vno15/lines.png" align="center" valign="center">
+  </div>
+
+</body>
+
+</html>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
 
 
-    <script>
-      $(function () {
-        new TTT.View(new TTT.Game(), $("div.ttt"));;
-      });
-    </script>
 
-    <footer class="footer">
-      <p class="text-white">&copy; Aleksandra, Paulina, Agnieszka 2018</p>
-    </footer>
 
-  </body>
+</body>
+
 </html>
