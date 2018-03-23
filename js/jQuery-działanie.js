@@ -130,3 +130,125 @@ jQuery.extend = jQuery.fn.extend = function() {
 		i = 1,
 		length = arguments.length,
 		deep = false;
+
+		if ( typeof target === "boolean" ) {
+			deep = target;
+
+			target = arguments[ i ] || {};
+			i++;
+		}
+
+		if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
+			target = {};
+		}
+
+		if ( i === length ) {
+			target = this;
+			i--;
+		}
+
+		for ( ; i < length; i++ ) {
+
+			if ( (options = arguments[ i ]) != null ) {
+
+				for ( name in options ) {
+					src = target[ name ];
+					copy = options[ name ];
+
+					if ( target === copy ) {
+						continue;
+					}
+
+					if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
+						if ( copyIsArray ) {
+							copyIsArray = false;
+							clone = src && jQuery.isArray(src) ? src : [];
+
+						} else {
+							clone = src && jQuery.isPlainObject(src) ? src : {};
+						}
+
+						target[ name ] = jQuery.extend( deep, clone, copy );
+
+					} else if ( copy !== undefined ) {
+						target[ name ] = copy;
+					}
+				}
+			}
+		}
+		return target;
+	};
+
+	jQuery.extend({
+
+		expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
+
+		isReady: true,
+
+		error: function( msg ) {
+			throw new Error( msg );
+		},
+
+		noop: function() {},
+
+		isFunction: function( obj ) {
+			return jQuery.type(obj) === "function";
+		},
+
+		isArray: Array.isArray,
+
+		isWindow: function( obj ) {
+			return obj != null && obj === obj.window;
+		},
+
+		isNumeric: function( obj ) {
+
+			return !jQuery.isArray( obj ) && obj - parseFloat( obj ) >= 0;
+		},
+
+		isPlainObject: function( obj ) {
+
+			if ( jQuery.type( obj ) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
+				return false;
+			}
+
+			if ( obj.constructor &&
+					!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
+				return false;
+			}
+
+			return true;
+		},
+
+		isEmptyObject: function( obj ) {
+			var name;
+			for ( name in obj ) {
+				return false;
+			}
+			return true;
+		},
+
+		type: function( obj ) {
+			if ( obj == null ) {
+				return obj + "";
+			}
+			return typeof obj === "object" || typeof obj === "function" ?
+				class2type[ toString.call(obj) ] || "object" :
+				typeof obj;
+		},
+		globalEval: function( code ) {
+			var script,
+				indirect = eval;
+
+			code = jQuery.trim( code );
+
+			if ( code ) {
+				if ( code.indexOf("use strict") === 1 ) {
+					script = document.createElement("script");
+					script.text = code;
+					document.head.appendChild( script ).parentNode.removeChild( script );
+				} else {
+					indirect( code );
+				}
+			}
+		},
