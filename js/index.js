@@ -104,7 +104,7 @@ function checkIfWin() {
     full = true;
   }
   if (full) {
-    return "draw";
+    return "Przegrany";
   }
 
   return null;
@@ -126,10 +126,10 @@ function endOfGame(x) {
     width: "200px",
     color: "#e74c3c"
   });
-  if (x != "draw") {
-    $("#board").append("<p id='win-text'>HAS WON!</p>");
+  if (x != "Przegrany") {
+    $("#board").append("<p id='win-text'>Wygrał!</p>");
   } else {
-    $("#board").append("<p id='win-text'>DRAW</p>");
+    $("#board").append("<p id='win-text'>Przegrany</p>");
     setTimeout(() => resetBoard(), 2000);
   }
   $("#winned").click(() => {
